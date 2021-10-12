@@ -32,18 +32,7 @@ namespace Airline_NewshoreFly.Controllers
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             });
-        }
-        
-        public string ListarVuelos()
-        {
-            var vuelos = (from m in Data.Flight
-                          select m).ToList();
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(vuelos,
-                new JsonSerializerSettings
-                {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-        }       
+        }      
+       
     }
 }
