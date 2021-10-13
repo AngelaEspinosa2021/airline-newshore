@@ -29,7 +29,7 @@ namespace Airline_NewshoreFly.Controllers
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
+                });
         }      
        
     }
