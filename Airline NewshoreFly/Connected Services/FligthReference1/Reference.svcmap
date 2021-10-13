@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f0aa266-93cf-465e-b9ad-8db517922953" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44310/FligthService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FligthService.xsd" MetadataType="Schema" ID="3736d217-512f-48bd-9c5f-99f3a1e6bcb1" SourceId="1" SourceUrl="http://localhost:44310/FligthService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FligthService1.xsd" MetadataType="Schema" ID="810d38eb-db83-450a-9aad-df50f117cb43" SourceId="1" SourceUrl="http://localhost:44310/FligthService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FligthService.disco" MetadataType="Disco" ID="a4ed0fc3-750e-41d5-bf2f-710d8b294f88" SourceId="1" SourceUrl="http://localhost:44310/FligthService.svc?disco" />
+    <MetadataFile FileName="FligthService2.xsd" MetadataType="Schema" ID="bed4fcdc-ba11-4304-85d3-f8fe908c48df" SourceId="1" SourceUrl="http://localhost:44310/FligthService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FligthService.wsdl" MetadataType="Wsdl" ID="29e3cc38-89db-4da1-af1b-bbbb066f12be" SourceId="1" SourceUrl="http://localhost:44310/FligthService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

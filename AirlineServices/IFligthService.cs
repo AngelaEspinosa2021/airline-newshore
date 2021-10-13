@@ -13,6 +13,6 @@ namespace AirlineServices
     public interface IFligthService
     {
         [OperationContract]
-        List<Flight> Find(string origen, string destino, DateTime fechaLlegada);
+        List<FligthDTO> FindFligths(string origen, string destino, DateTime fechaLlegada);
     }
 }

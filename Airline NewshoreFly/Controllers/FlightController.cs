@@ -1,4 +1,4 @@
-﻿using Airline_NewshoreFly.Models;
+﻿using Airline_NewshoreFly.FligthReference1;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace Airline_NewshoreFly.Controllers
 {
     public class FlightController : Controller
     {
-        private AirlineEntities Data = new AirlineEntities();
+        FligthReference1.FligthServiceClient cliente = new FligthReference1.FligthServiceClient();
 
         // GET: Flight
         public ActionResult Index()
@@ -24,10 +24,8 @@ namespace Airline_NewshoreFly.Controllers
         [HttpPost]
         public string Find(string origen, string destino, DateTime fechaLlegada)
         {
-            var listFlights = (from m in Data.Flight
-                               where m.DepartureStation == origen && m.ArrivalStation == destino && m.DepartureDate == fechaLlegada
-                               select m).ToList();
-            return Newtonsoft.Json.JsonConvert.SerializeObject(listFlights,
+            var listFligths = cliente.FindFligths(origen,destino,fechaLlegada); 
+            return Newtonsoft.Json.JsonConvert.SerializeObject(listFligths,
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore

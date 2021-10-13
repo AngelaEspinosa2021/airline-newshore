@@ -1,4 +1,5 @@
 ﻿using Airline_NewshoreFly.Models;
+using AirlineServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +13,25 @@ namespace AirlineServices
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione FligthService.svc o FligthService.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class FligthService : IFligthService
     {
-        AirlineEntities data = new AirlineEntities();
-        public void DoWork()
-        {
-            throw new NotImplementedException();
-        }
+        AirlineEntities1 data = new AirlineEntities1();
 
-        List<Flight> IFligthService.Find(string origen, string destino, DateTime fechaLlegada)
+        List<FligthDTO> IFligthService.FindFligths(string origen, string destino, DateTime fechaLlegada)
         {
             var listFlights = (from m in data.Flight
                                where m.DepartureStation == origen && m.ArrivalStation == destino && m.DepartureDate == fechaLlegada
-                               select m).ToList();
+                               select new FligthDTO
+                               {
+                                   Id = m.Id,
+                                   DepartureStation = m.DepartureStation,
+                                   ArrivalStation = m.ArrivalStation,
+                                   DepartureDate = (DateTime)m.DepartureDate,
+                                   Transport = m.Transport,
+                                   Price = (decimal)m.Price,
+                                   Currency = m.Currency,
+                                   FligthTime = m.FlightTime
+                               });
 
-            return listFlights;
+            return listFlights.ToList();
         }
     }
 }

@@ -7,23 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Airline_NewshoreFly.Models
+namespace AirlineServices.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Flight
+    public partial class Transport
     {
-        public long Id { get; set; }
-        public string DepartureStation { get; set; }
-        public string ArrivalStation { get; set; }
-
-        public DateTime DepartureDate { get; set; }
-        public string Transport { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public string Currency { get; set; }
-        public string FlightTime { get; set; }
+        public long IdTransport { get; set; }
+        public string FlightNumber { get; set; }
     
-        public virtual Transport Transport1 { get; set; }
+        public virtual Flight Flight { get; set; }
     }
 }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Airline_NewshoreFly.Models
+namespace AirlineServices.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirlineEntities : DbContext
+    public partial class AirlineEntities1 : DbContext
     {
-        public AirlineEntities()
-            : base("name=AirlineEntities")
+        public AirlineEntities1()
+            : base("name=AirlineEntities1")
         {
         }
     

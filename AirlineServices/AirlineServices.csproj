@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -77,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FligthService.svc" />
+    <Content Include="Models\AirlineModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AirlineModels.edmx</DependentUpon>
+      <LastGenOutput>AirlineModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AirlineModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AirlineModels.edmx</DependentUpon>
+      <LastGenOutput>AirlineModels.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +95,38 @@
       <DependentUpon>FligthService.svc</DependentUpon>
     </Compile>
     <Compile Include="IFligthService.cs" />
+    <Compile Include="Models\AirlineModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirlineModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AirlineModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirlineModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AirlineModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirlineModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Flight.cs">
+      <DependentUpon>AirlineModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FligthDTO.cs" />
+    <Compile Include="Models\Transport.cs">
+      <DependentUpon>AirlineModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\AirlineModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AirlineModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AirlineModels.edmx.diagram">
+      <DependentUpon>AirlineModels.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -100,6 +140,9 @@
       <Project>{1CAAFD50-A1EA-495F-8B68-DD357FB6EA87}</Project>
       <Name>Airline NewshoreFly</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
